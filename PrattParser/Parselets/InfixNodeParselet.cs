@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using PrattParser.Expressions;
+
 namespace PrattParser
 {
     /// <summary>
@@ -20,12 +22,8 @@ namespace PrattParser
         // "-" is left-associative, in that a - b - c  = (a - b) - c.
         protected bool isLeftAssociative;
 
-        // Combine the left expression, middle token and right parser into one expression.
-        public Expression parseTogether(Expression leftExpr, Token middleToken, Parser rightParser)
-        {
-            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
-            return new BinaryExpression(leftExpr, middleToken, rightParser.parseWithPrecedence(precedence));
-        }
+        // Combine the left expression and right parser into one expression.
+        public abstract Expression parseTogether(Expression leftExpr, Parser rightParser);
 
         public int NodePrecedence { get { return nodePrecedence;} }
 
@@ -39,6 +37,12 @@ namespace PrattParser
             nodePrecedence = Precedence.SUM;
             isLeftAssociative = true;
         }
+
+        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+        {
+            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
+            return new AdditionExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
+        }
     }
 
     public class MinusBinaryNodeParselet : InfixNodeParselet
@@ -47,6 +51,12 @@ namespace PrattParser
         {
             nodePrecedence = Precedence.SUM;
             isLeftAssociative = true;
+        }
+
+        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+        {
+            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
+            return new SubtractionExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
         }
     }
 
@@ -57,6 +67,12 @@ namespace PrattParser
             nodePrecedence = Precedence.PRODUCT;
             isLeftAssociative = true;
         }
+
+        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+        {
+            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
+            return new MultiplicationExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
+        }
     }
 
     public class DivisionBinaryNodeParselet : InfixNodeParselet
@@ -65,6 +81,12 @@ namespace PrattParser
         {
             nodePrecedence = Precedence.PRODUCT;
             isLeftAssociative = true;
+        }
+
+        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+        {
+            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
+            return new DivisionExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
         }
     }
 
@@ -75,6 +97,13 @@ namespace PrattParser
             nodePrecedence = Precedence.EXPONENT;
             isLeftAssociative = false;
         }
+
+        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+        {
+            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
+            return new ExponentiationExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
+        }
+
     }
 
 }

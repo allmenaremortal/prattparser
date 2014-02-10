@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using PrattParser;
 
 namespace PrattParser.Test
 {
@@ -27,33 +23,33 @@ namespace PrattParser.Test
         /// <summary>
         /// Array of IEO values for checking correct token type identification.
         /// </summary>
-        private static IEO_StringToTokenType[] lexerList = new IEO_StringToTokenType[]
+        private static IEO_StringToTokenType[] lexerList = new []
         {
-            new IEO_StringToTokenType(" ",new TokenType[] { TokenType.EOF }),
-            new IEO_StringToTokenType("+",new TokenType[] { TokenType.PLUS, TokenType.EOF }),
-            new IEO_StringToTokenType("-",new TokenType[] { TokenType.MINUS, TokenType.EOF }),
-            new IEO_StringToTokenType("/",new TokenType[] { TokenType.SLASH, TokenType.EOF }),
-            new IEO_StringToTokenType("*",new TokenType[] { TokenType.ASTERISK, TokenType.EOF }),
-            new IEO_StringToTokenType("^",new TokenType[] { TokenType.CARET, TokenType.EOF }),
-            new IEO_StringToTokenType("if",new TokenType[] { TokenType.IF, TokenType.EOF }),
-            new IEO_StringToTokenType("then",new TokenType[] { TokenType.THEN, TokenType.EOF }),
-            new IEO_StringToTokenType("else",new TokenType[] { TokenType.ELSE, TokenType.EOF }),
-            new IEO_StringToTokenType("==",new TokenType[] { TokenType.EQUAL, TokenType.EOF }),
-            new IEO_StringToTokenType("<",new TokenType[] { TokenType.LESS_THAN, TokenType.EOF }),
-            new IEO_StringToTokenType("<=",new TokenType[] { TokenType.LESS_THAN_OR_EQUAL, TokenType.EOF }),
-            new IEO_StringToTokenType(">",new TokenType[] { TokenType.GREATER_THAN, TokenType.EOF }),
-            new IEO_StringToTokenType(">=",new TokenType[] { TokenType.GREATER_THAN_OR_EQUAL, TokenType.EOF }),
-            new IEO_StringToTokenType("!=",new TokenType[] { TokenType.NOT_EQUAL, TokenType.EOF }),
-            new IEO_StringToTokenType("(",new TokenType[] { TokenType.LEFT_PAREN, TokenType.EOF }),
-            new IEO_StringToTokenType(")",new TokenType[] { TokenType.RIGHT_PAREN, TokenType.EOF }),
-            new IEO_StringToTokenType("42",new TokenType[] { TokenType.CONST_INT, TokenType.EOF }),
-            new IEO_StringToTokenType("42.43",new TokenType[] { TokenType.CONST_DOUBLE, TokenType.EOF }),
-            new IEO_StringToTokenType("prattparser",new TokenType[] { TokenType.IDENTIFIER, TokenType.EOF }),
-            new IEO_StringToTokenType("if(abc==42)then",new TokenType[] { TokenType.IF, TokenType.LEFT_PAREN, TokenType.IDENTIFIER, TokenType.EQUAL,TokenType.CONST_INT,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF }),
-            new IEO_StringToTokenType("if(abc====42)then",new TokenType[] { TokenType.IF, TokenType.LEFT_PAREN, TokenType.IDENTIFIER, TokenType.EQUAL, TokenType.EQUAL,TokenType.CONST_INT,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF }),
-            new IEO_StringToTokenType("   if ( abc  == 42 )    then   ",new TokenType[] { TokenType.IF, TokenType.LEFT_PAREN, TokenType.IDENTIFIER, TokenType.EQUAL,TokenType.CONST_INT,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF }),
-            new IEO_StringToTokenType("ifabc==42)then",new TokenType[] { TokenType.IDENTIFIER, TokenType.EQUAL,TokenType.CONST_INT,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF }),
-            new IEO_StringToTokenType("if(abc== 42.3 )then",new TokenType[] { TokenType.IF, TokenType.LEFT_PAREN, TokenType.IDENTIFIER, TokenType.EQUAL,TokenType.CONST_DOUBLE,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF })
+            new IEO_StringToTokenType(" ",new [] { TokenType.EOF }),
+            new IEO_StringToTokenType("+",new [] { TokenType.PLUS, TokenType.EOF }),
+            new IEO_StringToTokenType("-",new [] { TokenType.MINUS, TokenType.EOF }),
+            new IEO_StringToTokenType("/",new [] { TokenType.SLASH, TokenType.EOF }),
+            new IEO_StringToTokenType("*",new [] { TokenType.ASTERISK, TokenType.EOF }),
+            new IEO_StringToTokenType("^",new [] { TokenType.CARET, TokenType.EOF }),
+            new IEO_StringToTokenType("if",new [] { TokenType.IF, TokenType.EOF }),
+            new IEO_StringToTokenType("then",new [] { TokenType.THEN, TokenType.EOF }),
+            new IEO_StringToTokenType("else",new [] { TokenType.ELSE, TokenType.EOF }),
+            new IEO_StringToTokenType("==",new [] { TokenType.EQUAL, TokenType.EOF }),
+            new IEO_StringToTokenType("<",new [] { TokenType.LESS_THAN, TokenType.EOF }),
+            new IEO_StringToTokenType("<=",new [] { TokenType.LESS_THAN_OR_EQUAL, TokenType.EOF }),
+            new IEO_StringToTokenType(">",new [] { TokenType.GREATER_THAN, TokenType.EOF }),
+            new IEO_StringToTokenType(">=",new [] { TokenType.GREATER_THAN_OR_EQUAL, TokenType.EOF }),
+            new IEO_StringToTokenType("!=",new [] { TokenType.NOT_EQUAL, TokenType.EOF }),
+            new IEO_StringToTokenType("(",new [] { TokenType.LEFT_PAREN, TokenType.EOF }),
+            new IEO_StringToTokenType(")",new [] { TokenType.RIGHT_PAREN, TokenType.EOF }),
+            new IEO_StringToTokenType("42",new [] { TokenType.CONST_INT, TokenType.EOF }),
+            new IEO_StringToTokenType("42.43",new [] { TokenType.CONST_DOUBLE, TokenType.EOF }),
+            new IEO_StringToTokenType("prattparser",new [] { TokenType.IDENTIFIER, TokenType.EOF }),
+            new IEO_StringToTokenType("if(abc==42)then",new [] { TokenType.IF, TokenType.LEFT_PAREN, TokenType.IDENTIFIER, TokenType.EQUAL,TokenType.CONST_INT,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF }),
+            new IEO_StringToTokenType("if(abc====42)then",new [] { TokenType.IF, TokenType.LEFT_PAREN, TokenType.IDENTIFIER, TokenType.EQUAL, TokenType.EQUAL,TokenType.CONST_INT,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF }),
+            new IEO_StringToTokenType("   if ( abc  == 42 )    then   ",new [] { TokenType.IF, TokenType.LEFT_PAREN, TokenType.IDENTIFIER, TokenType.EQUAL,TokenType.CONST_INT,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF }),
+            new IEO_StringToTokenType("ifabc==42)then",new [] { TokenType.IDENTIFIER, TokenType.EQUAL,TokenType.CONST_INT,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF }),
+            new IEO_StringToTokenType("if(abc== 42.3 )then",new [] { TokenType.IF, TokenType.LEFT_PAREN, TokenType.IDENTIFIER, TokenType.EQUAL,TokenType.CONST_DOUBLE,TokenType.RIGHT_PAREN,TokenType.THEN, TokenType.EOF })
         };
 
         /// <summary>
@@ -113,7 +109,7 @@ namespace PrattParser.Test
         /// <summary>
         /// Array of IEO values for checking exception throwing when failing token identification.
         /// </summary>
-        private static string[] badStrings = new string[]
+        private static string[] badStrings = new []
         {
             "¤", "if (a =! b)", "%!"
         };

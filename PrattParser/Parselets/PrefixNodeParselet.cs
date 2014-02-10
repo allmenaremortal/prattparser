@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using PrattParser.Expressions;
+
 namespace PrattParser
 {
     /// <summary>
@@ -20,7 +22,7 @@ namespace PrattParser
     {
         public override Expression parseTogether(Token middleToken, Parser rightParser)
         {
-            return new UnaryExpression(middleToken, rightParser.parse());
+            return new NotExpression(rightParser.parse());
         }
     }
 
@@ -28,29 +30,7 @@ namespace PrattParser
     {
         public override Expression parseTogether(Token middleToken, Parser rightParser)
         {
-            return new NullaryExpression(middleToken);
-        }
-    }
-
-    public class IfNodeParselet : PrefixNodeParselet
-    {
-        public override Expression parseTogether(Token middleToken, Parser rightParser)
-        {
-            // At this juncture, rightParser is positioned immediately after the "if" token
-            // in the token stream. Parse until the "then" token is reached.
-            Expression ifExpr = rightParser.parseWithPrecedence(Precedence.CONDITIONAL);
-
-            // Read past the "then" token.
-            rightParser.Tokens.MoveNext();
-
-            Expression thenExpr = rightParser.parseWithPrecedence(Precedence.CONDITIONAL);
-
-            // Read past the "else" token.
-            rightParser.Tokens.MoveNext();
-
-            Expression elseExpr = rightParser.parseWithPrecedence(Precedence.CONDITIONAL);
-
-            return new TernaryExpression(middleToken, ifExpr, thenExpr, elseExpr);
+            return new ConstIntExpression(Convert.ToInt32(middleToken.Text));
         }
     }
 

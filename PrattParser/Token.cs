@@ -60,9 +60,17 @@ namespace PrattParser
             mText = text;
         }
 
-        public TokenType TypeOfToken { get { return mType; } set { mType = TypeOfToken; } }
+        public TokenType TypeOfToken
+        {
+            get { return mType; }
+            set { mType = TypeOfToken; }
+        }
 
-        public string Text { get { return mText; } set { mText = Text; } }
+        public string Text
+        {
+            get { return mText; }
+            set { mText = Text; }
+        }
 
         public override string ToString()
         {

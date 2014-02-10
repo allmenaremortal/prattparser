@@ -46,13 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExpressionVisitor.cs" />
+    <Compile Include="ExpressionHasher.cs" />
+    <Compile Include="ExpressionPrinter.cs" />
+    <Compile Include="Expressions\AdditionExpression.cs" />
+    <Compile Include="Expressions\DivisionExpression.cs" />
+    <Compile Include="Expressions\ExponentiationExpression.cs" />
+    <Compile Include="Expressions\IntegerLiteralExpression.cs" />
+    <Compile Include="Expressions\MultiplicationExpression.cs" />
+    <Compile Include="Expressions\NotExpression.cs" />
+    <Compile Include="Expressions\SubtractionExpression.cs" />
+    <Compile Include="IExpressionVisitor.cs" />
     <Compile Include="Grammar.cs" />
-    <Compile Include="Expression.cs" />
-    <Compile Include="Parslets\InfixNodeParselet.cs" />
+    <Compile Include="Expressions\Expression.cs" />
+    <Compile Include="Parselets\InfixNodeParselet.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Lexer\LexerEnumerator.cs" />
-    <Compile Include="Parslets\PrefixNodeParselet.cs" />
+    <Compile Include="Parselets\PrefixNodeParselet.cs" />
     <Compile Include="Token.cs" />
     <Compile Include="Lexer\Lexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

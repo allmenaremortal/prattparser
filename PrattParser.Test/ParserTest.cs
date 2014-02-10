@@ -29,8 +29,7 @@ namespace PrattParser.Test
             Expression expr = parser.parse();
 
             ExpressionPrinter writer = new ExpressionPrinter();
-            writer.writeExpression(expr);
-   
+            writer.visitExpression(expr);
         }
     }
 }

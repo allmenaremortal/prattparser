@@ -27,8 +27,8 @@ namespace PrattParser
     /// </summary>
     public class Parser
     {
-        IEnumerator<Token> tokens;
-        Grammar grammar;
+        private IEnumerator<Token> tokens;
+        private Grammar grammar;
 
         public Parser(IEnumerator<Token> _tokens, Grammar _grammar)
         {
@@ -36,7 +36,10 @@ namespace PrattParser
             grammar = _grammar;
         }
 
-        public IEnumerator<Token> Tokens { get { return tokens; } }
+        public IEnumerator<Token> Tokens
+        {
+            get { return tokens; }
+        }
 
         /// <summary>
         /// Parse the token stream into an expression tree.
@@ -76,7 +79,7 @@ namespace PrattParser
 
             return Precedence.INITIAL;
 
-            
+
         }
 
         private int precedenceOfCurrentToken()
@@ -118,7 +121,7 @@ namespace PrattParser
             // For as long as we encounter binary nodes with higher precedence than
             // our given precedence, we parse these (higher precedence corresponds to
             // having higher priority for parsing).
-            while ((int)precedenceOfCurrentToken() > (int)precedence)
+            while ((int) precedenceOfCurrentToken() > (int) precedence)
             {
                 token = tokens.Current;
 
@@ -128,7 +131,7 @@ namespace PrattParser
                 if (grammar.tryGetBinaryNodeParselet(token, out binaryNodeParselet))
                 {
                     tokens.MoveNext();
-                    leftExpr = binaryNodeParselet.parseTogether(leftExpr, token, this);
+                    leftExpr = binaryNodeParselet.parseTogether(leftExpr, this);
                 }
                 else
                 {
