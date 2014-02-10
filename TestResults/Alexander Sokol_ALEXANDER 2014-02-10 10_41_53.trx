@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="52282990-b025-411f-9b1b-11acb0ebda5b" name="Alexander Sokol@ALEXANDER 2014-02-10 10:41:53" runUser="Alexander\Alexander Sokol" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="48618850-8929-4e54-a07f-47a2ec2b7884">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Alexander Sokol_ALEXANDER 2014-02-10 10_41_53">
+      <DeploymentItem filename="C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\bin\Debug\PrattParser.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-02-10T10:41:53.7868595+01:00" queuing="2014-02-10T10:41:54.2639128+01:00" start="2014-02-10T10:41:54.3079453+01:00" finish="2014-02-10T10:41:54.6195735+01:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TokenTypeTest" storage="c:\users\alexander sokol\documents\visual studio 2010\projects\prattparser\testproject1\bin\debug\testproject1.dll" id="e6d94fdf-8ad6-7dad-24ff-8fedb1860213">
+      <Execution id="bb809cdf-311f-4e24-976d-08557c165868" />
+      <TestMethod codeBase="C:/Users/Alexander Sokol/Documents/Visual Studio 2010/Projects/PrattParser/TestProject1/bin/Debug/TestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.LexerEnumeratorTest, TestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TokenTypeTest" />
+    </UnitTest>
+    <UnitTest name="ForeachTest" storage="c:\users\alexander sokol\documents\visual studio 2010\projects\prattparser\testproject1\bin\debug\testproject1.dll" id="3491c738-8673-b5fb-8ccf-c959391fdf2b">
+      <Execution id="c3efe279-064f-40e3-812a-c28dd2a93656" />
+      <TestMethod codeBase="C:/Users/Alexander Sokol/Documents/Visual Studio 2010/Projects/PrattParser/TestProject1/bin/Debug/TestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.LexerEnumeratorTest, TestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ForeachTest" />
+    </UnitTest>
+    <UnitTest name="BadTokenTest" storage="c:\users\alexander sokol\documents\visual studio 2010\projects\prattparser\testproject1\bin\debug\testproject1.dll" id="d02c1ad5-6c6f-12df-5685-b5c4512bdd03">
+      <Execution id="2fac6e99-911d-40a8-93be-cb2ab90e49a3" />
+      <TestMethod codeBase="C:/Users/Alexander Sokol/Documents/Visual Studio 2010/Projects/PrattParser/TestProject1/bin/Debug/TestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.LexerEnumeratorTest, TestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="BadTokenTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3491c738-8673-b5fb-8ccf-c959391fdf2b" executionId="c3efe279-064f-40e3-812a-c28dd2a93656" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d02c1ad5-6c6f-12df-5685-b5c4512bdd03" executionId="2fac6e99-911d-40a8-93be-cb2ab90e49a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6d94fdf-8ad6-7dad-24ff-8fedb1860213" executionId="bb809cdf-311f-4e24-976d-08557c165868" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c3efe279-064f-40e3-812a-c28dd2a93656" testId="3491c738-8673-b5fb-8ccf-c959391fdf2b" testName="ForeachTest" computerName="ALEXANDER" duration="00:00:00.0177384" startTime="2014-02-10T10:41:54.3509762+01:00" endTime="2014-02-10T10:41:54.5728831+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c3efe279-064f-40e3-812a-c28dd2a93656">
+    </UnitTestResult>
+    <UnitTestResult executionId="2fac6e99-911d-40a8-93be-cb2ab90e49a3" testId="d02c1ad5-6c6f-12df-5685-b5c4512bdd03" testName="BadTokenTest" computerName="ALEXANDER" duration="00:00:00.0004175" startTime="2014-02-10T10:41:54.5728831+01:00" endTime="2014-02-10T10:41:54.5758871+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2fac6e99-911d-40a8-93be-cb2ab90e49a3">
+    </UnitTestResult>
+    <UnitTestResult executionId="bb809cdf-311f-4e24-976d-08557c165868" testId="e6d94fdf-8ad6-7dad-24ff-8fedb1860213" testName="TokenTypeTest" computerName="ALEXANDER" duration="00:00:00.0025495" startTime="2014-02-10T10:41:54.5768874+01:00" endTime="2014-02-10T10:41:54.5818895+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb809cdf-311f-4e24-976d-08557c165868">
+    </UnitTestResult>
+  </Results>
+</TestRun>

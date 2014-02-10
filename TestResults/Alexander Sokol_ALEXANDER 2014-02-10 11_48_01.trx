@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="f0b8a641-09bc-4e3e-a806-e26597ebd00e" name="Alexander Sokol@ALEXANDER 2014-02-10 11:48:01" runUser="Alexander\Alexander Sokol" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="48618850-8929-4e54-a07f-47a2ec2b7884">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Alexander Sokol_ALEXANDER 2014-02-10 11_48_01">
+      <DeploymentItem filename="C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\bin\Debug\PrattParser.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-02-10T11:48:01.3959464+01:00" queuing="2014-02-10T11:48:02.0403146+01:00" start="2014-02-10T11:48:02.0993013+01:00" finish="2014-02-10T11:48:12.4405844+01:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SimpleParserTest" storage="c:\users\alexander sokol\documents\visual studio 2010\projects\prattparser\testproject1\bin\debug\testproject1.dll" id="a0a57850-1603-30a7-2b38-003d558c5363">
+      <Execution id="e59790e8-73a3-4de9-b406-cd63d6916fe9" />
+      <TestMethod codeBase="C:/Users/Alexander Sokol/Documents/Visual Studio 2010/Projects/PrattParser/TestProject1/bin/Debug/TestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.ParserTest, TestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SimpleParserTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="a0a57850-1603-30a7-2b38-003d558c5363" executionId="e59790e8-73a3-4de9-b406-cd63d6916fe9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e59790e8-73a3-4de9-b406-cd63d6916fe9" testId="a0a57850-1603-30a7-2b38-003d558c5363" testName="SimpleParserTest" computerName="ALEXANDER" duration="00:00:09.7627791" startTime="2014-02-10T11:48:02.1583295+01:00" endTime="2014-02-10T11:48:12.3494632+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e59790e8-73a3-4de9-b406-cd63d6916fe9">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method PrattParser.Test.ParserTest.SimpleParserTest threw exception: 
+System.Exception: Failed to obtain BinaryNodeParselet</Message>
+          <StackTrace>    ved PrattParser.Parser.parseWithPrecedence(Precedence precedence) i C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\Parser.cs:linje 129
+   ved PrattParser.MultiplicationBinaryNodeParselet.parseTogether(Expression leftExpr, Token middleToken, Parser rightParser) i C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\BinaryNodeParselet.cs:linje 30
+   ved PrattParser.Parser.parseWithPrecedence(Precedence precedence) i C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\Parser.cs:linje 125
+   ved PrattParser.PlusBinaryNodeParselet.parseTogether(Expression leftExpr, Token middleToken, Parser rightParser) i C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\BinaryNodeParselet.cs:linje 22
+   ved PrattParser.Parser.parseWithPrecedence(Precedence precedence) i C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\Parser.cs:linje 125
+   ved PrattParser.Parser.parse() i C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\Parser.cs:linje 47
+   ved PrattParser.Test.ParserTest.SimpleParserTest() i C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\TestProject1\ParserTest.cs:linje 22
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

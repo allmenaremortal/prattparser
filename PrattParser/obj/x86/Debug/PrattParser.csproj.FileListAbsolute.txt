@@ -1,0 +1,10 @@
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\bin\Debug\PrattParser.pdb
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\obj\x86\Debug\PrattParser.pdb
+C:\Users\Alexander Sokol\documents\visual studio 2010\Projects\PrattParser\PrattParser\obj\x86\Debug\PrattParser.csprojResolveAssemblyReference.cache
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\bin\Debug\PrattParser.dll
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\obj\x86\Debug\PrattParser.dll
+C:\allmenaremortal\PrattParser\PrattParser\bin\Debug\PrattParser.dll
+C:\allmenaremortal\PrattParser\PrattParser\bin\Debug\PrattParser.pdb
+C:\allmenaremortal\PrattParser\PrattParser\obj\x86\Debug\PrattParser.csprojResolveAssemblyReference.cache
+C:\allmenaremortal\PrattParser\PrattParser\obj\x86\Debug\PrattParser.dll
+C:\allmenaremortal\PrattParser\PrattParser\obj\x86\Debug\PrattParser.pdb

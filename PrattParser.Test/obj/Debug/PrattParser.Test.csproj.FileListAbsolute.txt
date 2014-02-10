@@ -1,0 +1,21 @@
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\TestProject1\bin\Debug\TestProject1.dll
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\TestProject1\bin\Debug\TestProject1.pdb
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\TestProject1\bin\Debug\PrattParser.pdb
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\TestProject1\obj\Debug\PrattParser.Test.csprojResolveAssemblyReference.cache
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\TestProject1\obj\Debug\TestProject1.dll
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\TestProject1\obj\Debug\TestProject1.pdb
+C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\TestProject1\bin\Debug\PrattParser.dll
+C:\allmenaremortal\PrattParser\TestProject1\bin\Debug\PrattParser.dll
+C:\allmenaremortal\PrattParser\TestProject1\bin\Debug\PrattParser.pdb
+C:\allmenaremortal\PrattParser\TestProject1\obj\Debug\PrattParser.Test.csprojResolveAssemblyReference.cache
+C:\allmenaremortal\PrattParser\TestProject1\bin\Debug\PrattParser.Test.dll
+C:\allmenaremortal\PrattParser\TestProject1\bin\Debug\PrattParser.Test.pdb
+C:\allmenaremortal\PrattParser\TestProject1\obj\Debug\PrattParser.Test.dll
+C:\allmenaremortal\PrattParser\TestProject1\obj\Debug\PrattParser.Test.pdb
+C:\allmenaremortal\PrattParser\PrattParser.Test\bin\Debug\PrattParser.Test.dll
+C:\allmenaremortal\PrattParser\PrattParser.Test\bin\Debug\PrattParser.Test.pdb
+C:\allmenaremortal\PrattParser\PrattParser.Test\bin\Debug\PrattParser.dll
+C:\allmenaremortal\PrattParser\PrattParser.Test\bin\Debug\PrattParser.pdb
+C:\allmenaremortal\PrattParser\PrattParser.Test\obj\Debug\PrattParser.Test.csprojResolveAssemblyReference.cache
+C:\allmenaremortal\PrattParser\PrattParser.Test\obj\Debug\PrattParser.Test.dll
+C:\allmenaremortal\PrattParser\PrattParser.Test\obj\Debug\PrattParser.Test.pdb

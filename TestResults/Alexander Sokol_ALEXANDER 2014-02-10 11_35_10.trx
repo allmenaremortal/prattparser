@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="3899b143-0b93-4419-8e4d-d61a83190e28" name="Alexander Sokol@ALEXANDER 2014-02-10 11:35:10" runUser="Alexander\Alexander Sokol" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="48618850-8929-4e54-a07f-47a2ec2b7884">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Alexander Sokol_ALEXANDER 2014-02-10 11_35_10">
+      <DeploymentItem filename="C:\Users\Alexander Sokol\Documents\Visual Studio 2010\Projects\PrattParser\PrattParser\bin\Debug\PrattParser.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-02-10T11:35:10.9039838+01:00" queuing="2014-02-10T11:35:10.9039838+01:00" start="2014-02-10T11:35:10.9039838+01:00" finish="2014-02-10T11:35:17.2866183+01:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="1" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="ALEXANDER" outcome="Error" timestamp="2014-02-10T11:35:17.2811025+01:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+      <RunInfo computerName="ALEXANDER" outcome="Error" timestamp="2014-02-10T11:35:17.2866183+01:00">
+        <Text>Failed to queue test run 'Alexander Sokol@ALEXANDER 2014-02-10 11:35:10': Unable to start the agent process. </Text>
+        <Exception>Microsoft.VisualStudio.TestTools.Exceptions.EqtException: Unable to start the agent process. 
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.HandleCannotStartAgentProcessError(Exception ex)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.HandleCannotStartAgentProcessError()
+   at Microsoft.VisualStudio.TestTools.Agent.OutOfProcessStrategy.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo, Boolean restarting)
+   at Microsoft.VisualStudio.TestTools.Agent.OutOfProcessStrategy.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProxy.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessProxyManager.StartTestAgentProcesses(AgentProcessStartupInfo agentProcessStartupInfo)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo, Boolean startDataCollectionAgent)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo, TestRunConfiguration testRunConfiguration)
+   at Microsoft.VisualStudio.TestTools.TestManagement.LocalControllerProxy.StartProcess(TestRun run)
+   at Microsoft.VisualStudio.TestTools.TestManagement.LocalControllerProxy.PrepareProcess(TestRun run)
+   at Microsoft.VisualStudio.TestTools.TestManagement.LocalControllerProxy.InitializeController(TestRun run)
+   at Microsoft.VisualStudio.TestTools.TestManagement.ControllerProxy.QueueTestRunWorker(Object state)</Exception>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SimpleParserTest" storage="c:\users\alexander sokol\documents\visual studio 2010\projects\prattparser\testproject1\bin\debug\testproject1.dll" id="a0a57850-1603-30a7-2b38-003d558c5363">
+      <TestMethod codeBase="C:/Users/Alexander Sokol/Documents/Visual Studio 2010/Projects/PrattParser/TestProject1/bin/Debug/TestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.ParserTest, TestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SimpleParserTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="a0a57850-1603-30a7-2b38-003d558c5363" executionId="236b8b59-3fff-44c8-bec9-856865ad72f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="236b8b59-3fff-44c8-bec9-856865ad72f8" testId="a0a57850-1603-30a7-2b38-003d558c5363" testName="SimpleParserTest" computerName="ALEXANDER" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="236b8b59-3fff-44c8-bec9-856865ad72f8">
+    </UnitTestResult>
+  </Results>
+</TestRun>

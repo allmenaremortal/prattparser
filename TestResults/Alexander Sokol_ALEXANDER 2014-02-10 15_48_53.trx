@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="47582336-050e-4877-9319-635a0f7d848f" name="Alexander Sokol@ALEXANDER 2014-02-10 15:48:53" runUser="Alexander\Alexander Sokol" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="48618850-8929-4e54-a07f-47a2ec2b7884">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Alexander Sokol_ALEXANDER 2014-02-10 15_48_53">
+      <DeploymentItem filename="C:\allmenaremortal\PrattParser\PrattParser\bin\Debug\PrattParser.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-02-10T15:48:53.5948624+01:00" queuing="2014-02-10T15:48:53.8849840+01:00" start="2014-02-10T15:48:53.9400369+01:00" finish="2014-02-10T15:48:54.1701879+01:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TokenTypeTest" storage="c:\allmenaremortal\prattparser\prattparser.test\bin\debug\prattparser.test.dll" id="e6d94fdf-8ad6-7dad-24ff-8fedb1860213">
+      <Execution id="7ffacced-1544-40a4-bb31-de66187a76e0" />
+      <TestMethod codeBase="C:/allmenaremortal/PrattParser/PrattParser.Test/bin/Debug/PrattParser.Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.LexerEnumeratorTest, PrattParser.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TokenTypeTest" />
+    </UnitTest>
+    <UnitTest name="SimpleParserTest" storage="c:\allmenaremortal\prattparser\prattparser.test\bin\debug\prattparser.test.dll" id="a0a57850-1603-30a7-2b38-003d558c5363">
+      <Execution id="99ef39d8-1d9c-4fbd-9cf9-1147f2fb86fd" />
+      <TestMethod codeBase="C:/allmenaremortal/PrattParser/PrattParser.Test/bin/Debug/PrattParser.Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.ParserTest, PrattParser.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SimpleParserTest" />
+    </UnitTest>
+    <UnitTest name="BadTokenTest" storage="c:\allmenaremortal\prattparser\prattparser.test\bin\debug\prattparser.test.dll" id="d02c1ad5-6c6f-12df-5685-b5c4512bdd03">
+      <Execution id="187d2f4b-2445-4986-8da1-16e48a7e0b52" />
+      <TestMethod codeBase="C:/allmenaremortal/PrattParser/PrattParser.Test/bin/Debug/PrattParser.Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.LexerEnumeratorTest, PrattParser.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="BadTokenTest" />
+    </UnitTest>
+    <UnitTest name="ForeachTest" storage="c:\allmenaremortal\prattparser\prattparser.test\bin\debug\prattparser.test.dll" id="3491c738-8673-b5fb-8ccf-c959391fdf2b">
+      <Execution id="ce272a61-ad74-43fa-9f32-70b03a93becf" />
+      <TestMethod codeBase="C:/allmenaremortal/PrattParser/PrattParser.Test/bin/Debug/PrattParser.Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PrattParser.Test.LexerEnumeratorTest, PrattParser.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ForeachTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3491c738-8673-b5fb-8ccf-c959391fdf2b" executionId="ce272a61-ad74-43fa-9f32-70b03a93becf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a0a57850-1603-30a7-2b38-003d558c5363" executionId="99ef39d8-1d9c-4fbd-9cf9-1147f2fb86fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d02c1ad5-6c6f-12df-5685-b5c4512bdd03" executionId="187d2f4b-2445-4986-8da1-16e48a7e0b52" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6d94fdf-8ad6-7dad-24ff-8fedb1860213" executionId="7ffacced-1544-40a4-bb31-de66187a76e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="ce272a61-ad74-43fa-9f32-70b03a93becf" testId="3491c738-8673-b5fb-8ccf-c959391fdf2b" testName="ForeachTest" computerName="ALEXANDER" duration="00:00:00.0181718" startTime="2014-02-10T15:48:53.9450405+01:00" endTime="2014-02-10T15:48:54.1331613+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce272a61-ad74-43fa-9f32-70b03a93becf">
+    </UnitTestResult>
+    <UnitTestResult executionId="99ef39d8-1d9c-4fbd-9cf9-1147f2fb86fd" testId="a0a57850-1603-30a7-2b38-003d558c5363" testName="SimpleParserTest" computerName="ALEXANDER" duration="00:00:00.0077719" startTime="2014-02-10T15:48:54.1341615+01:00" endTime="2014-02-10T15:48:54.1451689+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="99ef39d8-1d9c-4fbd-9cf9-1147f2fb86fd">
+      <Output>
+        <DebugTrace>
+Binary node, token "*" of token type ASTERISK
+  Binary node, token "+" of token type PLUS
+    Nullary node, token "2" of token type CONST_INT
+    Nullary node, token "3" of token type CONST_INT
+  Nullary node, token "4" of token type CONST_INT</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="187d2f4b-2445-4986-8da1-16e48a7e0b52" testId="d02c1ad5-6c6f-12df-5685-b5c4512bdd03" testName="BadTokenTest" computerName="ALEXANDER" duration="00:00:00.0005850" startTime="2014-02-10T15:48:54.1451689+01:00" endTime="2014-02-10T15:48:54.1491731+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="187d2f4b-2445-4986-8da1-16e48a7e0b52">
+    </UnitTestResult>
+    <UnitTestResult executionId="7ffacced-1544-40a4-bb31-de66187a76e0" testId="e6d94fdf-8ad6-7dad-24ff-8fedb1860213" testName="TokenTypeTest" computerName="ALEXANDER" duration="00:00:00.0018866" startTime="2014-02-10T15:48:54.1501733+01:00" endTime="2014-02-10T15:48:54.1551759+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7ffacced-1544-40a4-bb31-de66187a76e0">
+    </UnitTestResult>
+  </Results>
+</TestRun>
