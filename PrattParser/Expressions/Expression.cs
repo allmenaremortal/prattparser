@@ -21,6 +21,9 @@ namespace PrattParser
         }
     }
 
+    /// <summary>
+    /// A unary expression contains a single Expression node.
+    /// </summary>
     public abstract class UnaryExpression : Expression
     {
         private Expression expr;
@@ -37,6 +40,9 @@ namespace PrattParser
         }
     }
 
+    /// <summary>
+    /// A binary expression contains two further expression nodes.
+    /// </summary>
     public abstract class BinaryExpression : Expression
     {
         private Expression leftExpr;
@@ -61,6 +67,9 @@ namespace PrattParser
         }
     }
 
+    /// <summary>
+    /// A ternary expression contains three expression nodes.
+    /// </summary>
     public abstract class TernaryExpression : Expression
     {
         private Expression leftExpr;

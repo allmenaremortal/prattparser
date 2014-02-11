@@ -14,11 +14,13 @@ namespace PrattParser
     /// </summary>
     public class ExpressionPrinter : IExpressionVisitor<object>
     {
-        private string treeString;
-        private int indentationLevel = 0;
+        private string treeString;                  // This string will hold the printed expression tree.
+        private int indentationLevel = 0;           // The indentation level for the currently printed part of the tree.
+        private const int indentationSize = 2;      // Number of spaces per indentation level.
 
-        private const int indentationSize = 2;
-
+        /// <summary>
+        /// Add a newline to the treeString, as well as indentation for the next branch or leaf.
+        /// </summary>
         private void addNewlineAndIndentation()
         {
             treeString = treeString + System.Environment.NewLine + new string(' ', indentationLevel*indentationSize);
@@ -52,8 +54,6 @@ namespace PrattParser
 
             return null;
         }
-
-
 
         public object visitAdditionExpression(AdditionExpression expr)
         {
@@ -127,7 +127,5 @@ namespace PrattParser
 
             return null;
         }
-
-
     }
 }

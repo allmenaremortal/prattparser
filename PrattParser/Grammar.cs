@@ -9,38 +9,44 @@ namespace PrattParser
     {
         // These dictionaries give the unary and binary node parselets for the different
         // existing token types, whenever applicable.
-        private Dictionary<TokenType, PrefixNodeParselet> unaryNodeParselets;
-        private Dictionary<TokenType, InfixNodeParselet> binaryNodeParselets;
+        private Dictionary<TokenType, PrefixNodeParselet> prefixNodeParselets;
+        private Dictionary<TokenType, InfixNodeParselet> infixNodeParselets;
 
         public Grammar()
         {
-            unaryNodeParselets = new Dictionary<TokenType, PrefixNodeParselet>();
-            binaryNodeParselets = new Dictionary<TokenType, InfixNodeParselet>();
+            prefixNodeParselets = new Dictionary<TokenType, PrefixNodeParselet>();
+            infixNodeParselets = new Dictionary<TokenType, InfixNodeParselet>();
 
-            unaryNodeParselets.Add(TokenType.NOT, new NotUnaryNodeParselet());
-            unaryNodeParselets.Add(TokenType.CONST_INT, new ConstIntUnaryNodeParselet());
+            prefixNodeParselets.Add(TokenType.NOT, new NotUnaryNodeParselet());
+            prefixNodeParselets.Add(TokenType.CONST_INT, new ConstIntUnaryNodeParselet());
 
-            binaryNodeParselets.Add(TokenType.PLUS, new PlusBinaryNodeParselet());
-            binaryNodeParselets.Add(TokenType.ASTERISK, new MultiplicationBinaryNodeParselet());
-            binaryNodeParselets.Add(TokenType.MINUS, new MinusBinaryNodeParselet());
-            binaryNodeParselets.Add(TokenType.SLASH, new DivisionBinaryNodeParselet());
-            binaryNodeParselets.Add(TokenType.CARET, new ExponentiationBinaryNodeParselet());
+            infixNodeParselets.Add(TokenType.PLUS, new PlusBinaryNodeParselet());
+            infixNodeParselets.Add(TokenType.ASTERISK, new MultiplicationBinaryNodeParselet());
+            infixNodeParselets.Add(TokenType.MINUS, new MinusBinaryNodeParselet());
+            infixNodeParselets.Add(TokenType.SLASH, new DivisionBinaryNodeParselet());
+            infixNodeParselets.Add(TokenType.CARET, new ExponentiationBinaryNodeParselet());
         }
 
         /// <summary>
-        /// Try to retrieve a unary node parselet for token.
+        /// Try to retrieve a prefix node parselet for the token.
         /// </summary>
-        /// <param name="token">The token for which to obtain a unary node parselet.</param>
-        /// <param name="unaryNodeParselet">The resulting unary node parselet if try was successful.</param>
-        /// <returns>True of the retrieval was successful.</returns>
-        public bool tryGetUnaryNodeParselet(Token token, out PrefixNodeParselet unaryNodeParselet)
+        /// <param name="token">The token for which to obtain a prefix node parselet.</param>
+        /// <param name="unaryNodeParselet">The resulting prefix node parselet if try was successful.</param>
+        /// <returns>True if the retrieval was successful.</returns>
+        public bool tryGetInfixNodeParselet(Token token, out PrefixNodeParselet unaryNodeParselet)
         {
-            return unaryNodeParselets.TryGetValue(token.TypeOfToken, out unaryNodeParselet);
+            return prefixNodeParselets.TryGetValue(token.TypeOfToken, out unaryNodeParselet);
         }
 
-        public bool tryGetBinaryNodeParselet(Token token, out InfixNodeParselet binaryNodeParselet)
+        /// <summary>
+        /// Try to retrieve an infix node parselet for the token.
+        /// </summary>
+        /// <param name="token">The token for which to obtain an infix node parselet.</param>
+        /// <param name="binaryNodeParselet">The resulting infix node parselet if try was successful.</param>
+        /// <returns>True if the retrieval was successful.</returns>
+        public bool tryGetInfixNodeParselet(Token token, out InfixNodeParselet binaryNodeParselet)
         {
-            return binaryNodeParselets.TryGetValue(token.TypeOfToken, out binaryNodeParselet);
+            return infixNodeParselets.TryGetValue(token.TypeOfToken, out binaryNodeParselet);
         }
     }
 }

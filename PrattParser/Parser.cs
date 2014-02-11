@@ -102,7 +102,7 @@ namespace PrattParser
             // expression cannot start with a token for a binary node. Read a token
             // from the stream and retrieve a corresponding unary node parselet.
             token = tokens.Current;
-            if (!grammar.tryGetUnaryNodeParselet(token, out unaryNodeParselet))
+            if (!grammar.tryGetInfixNodeParselet(token, out unaryNodeParselet))
             {
                 throw new Exception("Failed to obtain PrefixNodeParselet");
             }
@@ -125,10 +125,10 @@ namespace PrattParser
             {
                 token = tokens.Current;
 
-                // If tryGetBinaryNodeParselet returns true, the current token can be
+                // If tryGetInfixNodeParselet returns true, the current token can be
                 // parsed as an infix or postfix operation resulting in a binary node
                 // (for postfix, a binary node with unused right expression).
-                if (grammar.tryGetBinaryNodeParselet(token, out binaryNodeParselet))
+                if (grammar.tryGetInfixNodeParselet(token, out binaryNodeParselet))
                 {
                     tokens.MoveNext();
                     leftExpr = binaryNodeParselet.parseTogether(leftExpr, this);
@@ -140,6 +140,8 @@ namespace PrattParser
 
             }
 
+            // When we get to this point, we have no more infix / postfix expressions to parse,
+            // and thus the current expression up to the given precedence has finished parsing.
             return leftExpr;
         }
 

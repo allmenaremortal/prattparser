@@ -25,85 +25,105 @@ namespace PrattParser
         // Combine the left expression and right parser into one expression.
         public abstract Expression parseTogether(Expression leftExpr, Parser rightParser);
 
-        public int NodePrecedence { get { return nodePrecedence;} }
+        // The node precedence determines how far the right expression of rightParser is parsed.
+        public int NodePrecedence
+        {
+            get { return nodePrecedence; }
+        }
 
-        public bool IsLeftAssociative { get { return isLeftAssociative; } }
+        // Left associativity determines the precedence passed to the rightParser, in order to
+        // determine whether next infix parselets of same precedence are given higher or
+        // lower precedence than the current parselet.
+        public bool IsLeftAssociative
+        {
+            get { return isLeftAssociative; }
+        }
+
+        // This predecende is the one taking into account both the precedence of the infix
+        // node in the operation precedence hierarchy, as well as the correction for
+        // associativity.
+        public int AssociativityCorrectedPrecedence
+        {
+            // When parsing left associative operators, we parse the right-hand expression
+            // requiring high precedence, to ensure that the left-hand side takes priority.
+            get { return NodePrecedence + (isLeftAssociative ? 0 : 1); }
+        }
     }
 
     public class PlusBinaryNodeParselet : InfixNodeParselet
-    {
-        public PlusBinaryNodeParselet()
         {
-            nodePrecedence = Precedence.SUM;
-            isLeftAssociative = true;
+            public PlusBinaryNodeParselet()
+            {
+                nodePrecedence = Precedence.SUM;
+                isLeftAssociative = true;
+            }
+
+            public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+            {
+                return new AdditionExpression(leftExpr,
+                    rightParser.parseWithPrecedence(AssociativityCorrectedPrecedence));
+            }
         }
 
-        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+        public class MinusBinaryNodeParselet : InfixNodeParselet
         {
-            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
-            return new AdditionExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
+            public MinusBinaryNodeParselet()
+            {
+                nodePrecedence = Precedence.SUM;
+                isLeftAssociative = true;
+            }
+
+            public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+            {
+                return new SubtractionExpression(leftExpr,
+                    rightParser.parseWithPrecedence(AssociativityCorrectedPrecedence));
+            }
         }
+
+        public class MultiplicationBinaryNodeParselet : InfixNodeParselet
+        {
+            public MultiplicationBinaryNodeParselet()
+            {
+                nodePrecedence = Precedence.PRODUCT;
+                isLeftAssociative = true;
+            }
+
+            public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+            {
+                return new MultiplicationExpression(leftExpr,
+                    rightParser.parseWithPrecedence(AssociativityCorrectedPrecedence));
+            }
+        }
+
+        public class DivisionBinaryNodeParselet : InfixNodeParselet
+        {
+            public DivisionBinaryNodeParselet()
+            {
+                nodePrecedence = Precedence.PRODUCT;
+                isLeftAssociative = true;
+            }
+
+            public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+            {
+                return new DivisionExpression(leftExpr,
+                    rightParser.parseWithPrecedence(AssociativityCorrectedPrecedence));
+            }
+        }
+
+        public class ExponentiationBinaryNodeParselet : InfixNodeParselet
+        {
+            public ExponentiationBinaryNodeParselet()
+            {
+                nodePrecedence = Precedence.EXPONENT;
+                isLeftAssociative = false;
+            }
+
+            public override Expression parseTogether(Expression leftExpr, Parser rightParser)
+            {
+                return new ExponentiationExpression(leftExpr,
+                    rightParser.parseWithPrecedence(AssociativityCorrectedPrecedence));
+            }
+
+        }
+
     }
-
-    public class MinusBinaryNodeParselet : InfixNodeParselet
-    {
-        public MinusBinaryNodeParselet()
-        {
-            nodePrecedence = Precedence.SUM;
-            isLeftAssociative = true;
-        }
-
-        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
-        {
-            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
-            return new SubtractionExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
-        }
-    }
-
-    public class MultiplicationBinaryNodeParselet : InfixNodeParselet
-    {
-        public MultiplicationBinaryNodeParselet()
-        {
-            nodePrecedence = Precedence.PRODUCT;
-            isLeftAssociative = true;
-        }
-
-        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
-        {
-            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
-            return new MultiplicationExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
-        }
-    }
-
-    public class DivisionBinaryNodeParselet : InfixNodeParselet
-    {
-        public DivisionBinaryNodeParselet()
-        {
-            nodePrecedence = Precedence.PRODUCT;
-            isLeftAssociative = true;
-        }
-
-        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
-        {
-            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
-            return new DivisionExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
-        }
-    }
-
-    public class ExponentiationBinaryNodeParselet : InfixNodeParselet
-    {
-        public ExponentiationBinaryNodeParselet()
-        {
-            nodePrecedence = Precedence.EXPONENT;
-            isLeftAssociative = false;
-        }
-
-        public override Expression parseTogether(Expression leftExpr, Parser rightParser)
-        {
-            int precedence = NodePrecedence + (isLeftAssociative ? 1 : 0);
-            return new ExponentiationExpression(leftExpr, rightParser.parseWithPrecedence(precedence));
-        }
-
-    }
-
-}
